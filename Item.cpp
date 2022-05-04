@@ -3,7 +3,6 @@ Item::Item(int upc)
 {
    UPC = upc;
    nextPtr = nullptr;
-   
 }
 Item* Item::getNextItem()
 {
@@ -12,4 +11,8 @@ Item* Item::getNextItem()
 void Item::setNextItem(Item* item)
 {
     nextPtr = item;
+}
+int Item::getUPC()
+{
+    return UPC;
 }
