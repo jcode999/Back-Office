@@ -7,7 +7,7 @@ int main()
     Item * item1 = new Item(1);
     
     Item * item2 = new Item(2);
-    item1->setUPC(2);
+    //item1->setUPC(2);
    //create a cart
    Cart cart;
    cart.addToCart(item1);
