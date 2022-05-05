@@ -25,9 +25,9 @@ void LinkedList::deleteItem(Item* item)
     Item* foo = head;//temporary var
     if(item->getUPC()==head->getUPC())
     {
-        foo = head;
+        
         head = head->getNextItem();
-        delete head;
+        delete foo;
     }
     else
     {

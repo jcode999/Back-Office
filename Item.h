@@ -1,4 +1,3 @@
-#pragma once
 #include<string>
 using namespace std;
 class Item 
@@ -18,6 +17,6 @@ class Item
     Item(int upc);
     Item* getNextItem();//used for liked_list
     int getUPC();
-    int setUPC(int upc);
+    void setUPC(int upc);
     void setNextItem(Item* item);
 };
