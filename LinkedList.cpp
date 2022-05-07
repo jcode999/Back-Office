@@ -17,43 +17,47 @@ void LinkedList::insertItem(Item* item)
         tail = tail->getNextItem();
     }
 }
-void LinkedList::deleteItem(Item* item)
+bool LinkedList::deleteItem(int upc)
 {
-    if(head==nullptr)
-    return;
-    Item* toDelete = nullptr;
-    Item* foo = head;//temporary var
-    if(item->getUPC()==head->getUPC())
+     Item* toDelete = nullptr;
+     Item* currNode = head;
+    if(head->getUPC()==upc)
     {
-        
+        toDelete = head;
         head = head->getNextItem();
-        delete foo;
-    }
-    else
-    {
-     while(foo!=nullptr && foo->getNextItem()!=nullptr)
-    {
-        if(foo->getNextItem()->getUPC()==item->getUPC())
+        delete toDelete;
+        if(head!=nullptr && head->getNextItem()==nullptr)
         {
-           toDelete = foo->getNextItem();
-           foo->setNextItem(toDelete->getNextItem());
+        head = nullptr;
+        }
+        return true;
+    }
+    while(currNode!=nullptr && currNode->getNextItem()!=nullptr)
+    {
+        if(currNode->getNextItem()->getUPC()==upc)
+        {
+           toDelete = currNode->getNextItem();
+           currNode->setNextItem(toDelete->getNextItem());
            if(toDelete==tail)
            {
-               tail = foo;
+               tail = currNode;
            }
            delete toDelete;
-         
+           return true;
         }
-        foo = foo->getNextItem();
+        currNode = currNode->getNextItem();
     }
-    }
+    return false;
 }
 void LinkedList::display()
-{
+{    int total = 0;
      Item* currNode = head;//start from head
     while(currNode!=nullptr)//iteration through linked list
     {
-        cout<<"("<<currNode->getUPC()<<endl;
+        cout<<currNode->getDescription()<<"      "<<currNode->getCostPrice()<<endl;
+        total = total + currNode->getCostPrice();
         currNode = currNode->getNextItem();//update currnode
+
     }
+    cout<<"Your Total is "<<total<<endl;
 }

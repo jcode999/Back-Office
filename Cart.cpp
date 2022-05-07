@@ -8,9 +8,9 @@ void Cart::addToCart(Item* item)
 {
     cart.insertItem(item);
 }
-void Cart::removeFromCart(Item* item)
+void Cart::removeFromCart(int upc)
 {
-    cart.deleteItem(item);
+    cart.deleteItem(upc);
 }
 void Cart::viewCart()
 {

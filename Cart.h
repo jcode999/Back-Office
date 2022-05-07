@@ -7,7 +7,7 @@ class Cart
     int totalDue;
     public:
     void addToCart(Item* item);
-    void removeFromCart(Item* item);
+    void removeFromCart(int upc);
     bool checkOut(); 
     void viewCart();
     Cart();

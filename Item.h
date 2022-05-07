@@ -9,9 +9,13 @@ class Item
     int current_quantity;
     int begining_quantity;
     int sold_quanity;
-    int retailPrice;//price we charge to costumer
-    int costPrice;//price charged by venders to business
+    float retailPrice;//price we charge to costumer
+    float costPrice;//price charged by venders to business
+    int minimumQuantity;
+    int maximumQuantity;
     Item* nextPtr;//used for linked list
+    bool emptySinceStart;//used for hash table
+    bool emptyAfterRemoval;//used for hash table
     public:
     //gets and sets
     Item();
@@ -20,4 +24,26 @@ class Item
     int getUPC();
     void setUPC(int upc);
     void setNextItem(Item* item);
+    void setDescription(string des);
+    void setEmptySinceStart(bool _tf);
+    void setEmptyAfterRemovel(bool _tf);
+    string getDescription();
+    bool getEmptySinceStart();
+    bool getEmptyAfterRemovel();
+    void setMinimumQuantity(int minQuantity);
+    int getMinimumQuanity();
+    void setCurrentQuantity(int currQuantity);
+    int getCurrentQuantity();
+    void setRetailPrice(float retail);
+    float getRetailPrice();
+    void setBeginingQuantity(int begQuantity);
+    int getBeginingQuantity();
+    void setCostPrice(float cost);
+    float getCostPrice();
+    void setSoldQuantity(int x);
+    int getSoldQuantity();
+    void setMaximumQuantity(int max);
+    int getMaximumQuantity();
+
+
 };

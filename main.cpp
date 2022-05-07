@@ -1,5 +1,6 @@
 #include"Cart.h"
-#include"HashTable.h"
+#include"Inventory.h"
+#include"Sale.h"
 #include<iostream>
 using namespace std;
 int main()
@@ -10,19 +11,19 @@ int main()
     Item * item2 = new Item(2);
     //item1->setUPC(2);
    //create a cart
-   Cart cart;
-   cart.addToCart(item1);
-   cart.addToCart(item2);
-   cart.addToCart(item3);
-   cart.viewCart();
-   cart.removeFromCart(item3);
-   cart.viewCart();
-   HashTable table(10);
-   table.insert(10);
+   item1->setDescription("Olivia melanio");
+   item2->setDescription("My Father Romeo Juiate");
+   item3->setDescription("Perdomo Champgne 10th Anneversary");
 
-  cout<<"Size of 1000 item: "<<sizeof(Item)*1000<<endl;
-   delete item2;
-   delete item1;
+   Inventory inventory(3);
+   inventory.insert(item1);
+   inventory.insert(item2);
+   inventory.insert(item3);
+   makeASale(inventory);
+
+  
+  
+
    return 0;
    
 
