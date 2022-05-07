@@ -1,4 +1,5 @@
 #include"Cart.h"
+#include"HashTable.h"
 #include<iostream>
 using namespace std;
 int main()
@@ -16,7 +17,10 @@ int main()
    cart.viewCart();
    cart.removeFromCart(item3);
    cart.viewCart();
+   HashTable table(10);
+   table.insert(10);
 
+  cout<<"Size of 1000 item: "<<sizeof(Item)*1000<<endl;
    delete item2;
    delete item1;
    return 0;
