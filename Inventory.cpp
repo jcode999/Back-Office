@@ -68,10 +68,7 @@ void Inventory::display()
             cout << "[" << x << "] ->[(" << (table + x)->getUPC()<<","<< (table + x)->getDescription()<<")]" << endl;
         }
 }
-Inventory::~Inventory()
-{
-    delete[] table;
-}
+
 Item* Inventory::getItem(int index)
 {
     return table + index;

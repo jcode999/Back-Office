@@ -14,6 +14,6 @@ class Inventory
     int hash(string key);
     void display();
     Item* getItem(int index);
-    ~Inventory();
+    
 
 };

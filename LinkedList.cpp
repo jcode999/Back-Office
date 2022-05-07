@@ -25,7 +25,7 @@ bool LinkedList::deleteItem(int upc)
     {
         toDelete = head;
         head = head->getNextItem();
-        delete toDelete;
+       // delete toDelete;
         if(head!=nullptr && head->getNextItem()==nullptr)
         {
         head = nullptr;
@@ -42,7 +42,7 @@ bool LinkedList::deleteItem(int upc)
            {
                tail = currNode;
            }
-           delete toDelete;
+          // delete toDelete;
            return true;
         }
         currNode = currNode->getNextItem();

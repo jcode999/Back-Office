@@ -2,7 +2,7 @@
 #include"Cart.h"
 void makeASale(Inventory inventory)
 {  
-    Cart cart;
+   Cart cart;
    int itemNum;
    int option;
    bool continueLoop = true;
