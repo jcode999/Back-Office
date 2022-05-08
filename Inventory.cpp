@@ -49,17 +49,16 @@ Inventory::Inventory(int _size)
             {
                 cost = stof(foo); break;
             }
-            case 6:
+            case 6://we know line will change after this condition is met, therefore all the variables will be initialized for an item
             {
-                retail = stof(foo); 
-                counter = 0;
+                 retail = stof(foo); 
+                 counter = 0;
+                 Item item(upc,des,curr,beg,sold,cost,retail);
+                 insert(&item);
                 break;
             }
         }
         counter++;
-        Item temp(upc,des,curr,beg,sold,cost,retail);
-        insert(&temp);
-        
     }
 
 }
