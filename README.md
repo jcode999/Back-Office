@@ -17,3 +17,6 @@ use: g++ *.cpp [compile]
 Group Members:
 Harish Javed 
 Jigme Rinji Sherpa
+
+Did not use Git because Harish is not much familiar with git.
+We used our time in campus to work together.
