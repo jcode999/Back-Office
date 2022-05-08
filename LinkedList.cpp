@@ -19,17 +19,13 @@ void LinkedList::insertItem(Item* item)
 }
 bool LinkedList::deleteItem(int upc)
 {
+    cout<<"Deleting item with upc "<<upc<<endl;
      Item* toDelete = nullptr;
      Item* currNode = head;
     if(head->getUPC()==upc)
-    {
+    {   cout<<"head item"<<endl;
         toDelete = head;
         head = head->getNextItem();
-       // delete toDelete;
-        if(head!=nullptr && head->getNextItem()==nullptr)
-        {
-        head = nullptr;
-        }
         return true;
     }
     while(currNode!=nullptr && currNode->getNextItem()!=nullptr)

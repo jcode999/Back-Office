@@ -15,18 +15,13 @@ int main()
    item2->setDescription("My Father Romeo Juiate");
    item3->setDescription("Perdomo Champgne 10th Anneversary");
 
-   LinkedList list;
-   list.insertItem(item1);
-   list.insertItem(item2);
-   list.insertItem(item3);
-
-   list.display();
-   /*Inventory inventory(3);
+  
+   Inventory inventory(3);
    inventory.insert(item1);
    inventory.insert(item2);
    inventory.insert(item3);
    makeASale(inventory);
-   printf("here");*/
+   printf("here");
   
   
 
