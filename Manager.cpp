@@ -14,6 +14,7 @@ void addNewItem(Inventory &inventory)
     
     while(continueLoop)
     {
+    cout<<endl;
     cout<<"Enter the items UPC (must be greater than 0) ";
     cin>>upc;
     cin.ignore();
@@ -39,6 +40,7 @@ void addNewItem(Inventory &inventory)
 }
 void removeItem(Inventory &inventory)
 {
+    cout<<endl;
     cin.ignore();
     string description;
     cout<<"Enter the exact description of the item you want to delete"<<endl;//hashed using description
@@ -73,11 +75,11 @@ void purchase(Inventory &inventory)
      cin>>addItemOption;
           if(addItemOption=='y')
           {
-              cout<<"Enter UPC";
+              cout<<"Enter UPC: ";
               cin>>upc;
-              cout<<"Enter cost price";
+              cout<<"Enter cost price: ";
               cin>>costPrice;
-              cout<<"Enter retail price";
+              cout<<"Enter retail price: ";
               cin>>retailPrice;
               Item item(upc,description,costPrice,retailPrice);
               if(inventory.insert(&item))

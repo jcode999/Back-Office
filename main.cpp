@@ -25,7 +25,7 @@ int main()
    //removeItem(inventory);
    while(continueLoop)
    {
-   cout<<"Who are you? \n Enter 1. for Costumer \n Enter 2 for Manager \n Enter -1 to Exit"<<endl;
+   cout<<"Who are you? \n Enter 1 for Costumer \n Enter 2 for Manager \n Enter -1 to Exit \nI Am: ";
    cin>>who;
    switch(who)
    {

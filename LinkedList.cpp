@@ -1,4 +1,5 @@
 #include"LinkedList.h"
+#include<iomanip>
 #include<iostream>
 LinkedList::LinkedList()
 {
@@ -50,18 +51,20 @@ bool LinkedList::deleteItem(int upc)
     return false;
 }
 void LinkedList::display()
-
-{  
+{   cout<<endl;
+    cout<<"------------Your Receipt----------------------"<<endl;
+    cout<<"Description"<<setw(40)<<"Price"<<endl;
      float total = 0.0;
      Item* currNode = head;//start from head
-    while(currNode!=nullptr)//iteration through linked list
+     while(currNode!=nullptr)//iteration through linked list
     {
-        cout<<currNode->getDescription()<<"      $"<<currNode->getRetailPrice()<<endl;
+        cout<<currNode->getDescription()<<setw(40)<<"$"<<currNode->getRetailPrice()<<endl;
         total = total + currNode->getRetailPrice();
         currNode = currNode->getNextItem();//update currnode
 
     }
-    cout<<"Your Total is $"<<total<<endl;
+    cout<<"Your Total is........ $"<<total<<endl;
+    cout<<"---------------Thank You For Shopping With Us-------------"<<endl;
 }
 bool LinkedList::searchItem(int upc)
 {
