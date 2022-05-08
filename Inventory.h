@@ -14,6 +14,7 @@ class Inventory
     int hash(string key);
     void displayMenu();
     Item* getItem(int index);
+    void displayInventory();
   
     
 

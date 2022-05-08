@@ -18,7 +18,7 @@ void makeASale(Inventory inventory)
    {
        case 1:
        {
-       inventory.displayMenu();
+       inventory.displayInventory();
        break;
        }
        case 2:

@@ -52,7 +52,7 @@ Inventory::Inventory(int _size)
             case 6://we know line will change after this condition is met, therefore all the variables will be initialized for an item
             {
                  retail = stof(foo); 
-                 counter = 0;
+                 counter = -1;
                  Item item(upc,des,curr,beg,sold,cost,retail);
                  insert(&item);
                 break;
@@ -126,6 +126,14 @@ void Inventory::displayMenu()
         for (int x = 0; x < size; x++)
         {
             cout << x <<" "<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
+        }
+}
+void Inventory::displayInventory()
+{
+    cout << "---------Inventory--------" << endl;
+        for (int x = 0; x < size; x++)
+        {
+            cout << x <<" "<<(table + x)->getUPC()<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
         }
 }
 
