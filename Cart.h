@@ -6,9 +6,9 @@ class Cart
     LinkedList cart;
     int totalDue;
     public:
-    void addToCart(Item* item);
+    bool addToCart(Item* item);
     void removeFromCart(int upc);
-    bool checkOut(); 
+    void checkOut(); 
     void viewCart();
     Cart();
 };

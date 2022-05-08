@@ -1,12 +1,12 @@
 #include"Item.h"
 
-Item::Item(int upc, string des, int current, int begining, int sold, float cost, float retail)
+Item::Item(int upc, string des, float cost, float retail)
 {
     UPC = upc;
     description = des;
-    current_quantity = current;
-    sold_quanity = sold;
-    begining_quantity = begining;
+    current_quantity = 0;
+    sold_quanity = 0;
+    begining_quantity = 0;
     retailPrice = retail;
     costPrice = cost;
     nextPtr = nullptr;

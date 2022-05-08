@@ -2,5 +2,8 @@
 #include<iostream>
 using namespace std;
 void viewAllInventory(Inventory inventory);
-void makeOrder(Inventory Inventory);
+void addNewItem(Inventory &inventory);
+void removeItem(Inventory &inventory);
+
+
 

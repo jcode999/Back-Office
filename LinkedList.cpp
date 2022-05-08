@@ -50,16 +50,18 @@ bool LinkedList::deleteItem(int upc)
     return false;
 }
 void LinkedList::display()
-{    float total = 0.0;
+
+{  
+     float total = 0.0;
      Item* currNode = head;//start from head
     while(currNode!=nullptr)//iteration through linked list
     {
-        cout<<currNode->getDescription()<<"      "<<currNode->getRetailPrice()<<endl;
+        cout<<currNode->getDescription()<<"      $"<<currNode->getRetailPrice()<<endl;
         total = total + currNode->getRetailPrice();
         currNode = currNode->getNextItem();//update currnode
 
     }
-    cout<<"Your Total is "<<total<<endl;
+    cout<<"Your Total is $"<<total<<endl;
 }
 bool LinkedList::searchItem(int upc)
 {
@@ -72,4 +74,17 @@ bool LinkedList::searchItem(int upc)
         currNode = currNode->getNextItem();//update currnode
     }
     return false;//item not found
+}
+void LinkedList::update()
+{
+    if(head==nullptr)
+    return;
+    Item* currNode = head;//start from head
+    while(currNode!=nullptr)//iteration through linked list
+    {
+       currNode->setSoldQuantity(currNode->getSoldQuantity()+1);
+       currNode->setCurrentQuantity(currNode->getCurrentQuantity()-1);
+       currNode = currNode->getNextItem();//update currnode
+       
+    }
 }

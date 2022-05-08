@@ -19,7 +19,7 @@ class Item
     public:
     //gets and sets
     Item(int upc);
-    Item(int upc, string des, int current, int begining, int sold, float cost, float retail);
+    Item(int upc, string des, float cost, float retail);
     Item();
     Item* getNextItem();//used for liked_list
     int getUPC();

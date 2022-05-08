@@ -3,6 +3,7 @@
 #include<iostream>
 #include<vector>
 #include<string.h>
+#include<iomanip>
 using namespace std;
 Inventory::Inventory(int _size)
 {
@@ -71,17 +72,21 @@ bool Inventory::deleteItem(string key)
 void Inventory::displayMenu()
 {
     cout << "---------Menu--------" << endl;
+    cout<<setw(10)<<"Item Number"<<setw(40)<<"Description"<<setw(10)<<"Price"<<endl;
         for (int x = 0; x < size; x++)
-        {
-            cout << x <<" "<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
+        { 
+             if((table+x)->getUPC()>=1)
+            cout <<setw(10) <<x <<" "<< setw(40)<<(table + x)->getDescription()<<setw(10)<<(table + x)->getRetailPrice() << endl;
         }
 }
 void Inventory::displayInventory()
 {
     cout << "---------Inventory--------" << endl;
+    cout<<setw(10)<<"Item Number"<<setw(10)<<"UPC"<<setw(40)<<"Description"<<setw(15)<<"cost price"<<setw(15)<<"retail price"<<setw(20)<<"current quantity"<<setw(20)<<"sold quantity"<<endl;
         for (int x = 0; x < size; x++)
-        {
-            cout << x <<" "<<(table + x)->getUPC()<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
+        {   
+            if((table+x)->getUPC()>=1)
+            cout<<setw(10)<< x <<setw(10)<<(table + x)->getUPC()<<setw(40)<< (table + x)->getDescription()<<setw(15)<<(table + x)->getCostPrice()<<setw(15)<<(table + x)->getRetailPrice()<<setw(20)<<(table+x)->getCurrentQuantity()<<setw(20)<<(table + x)->getSoldQuantity()<<endl;
         }
 }
 

@@ -9,5 +9,6 @@ class LinkedList
    bool deleteItem(int itemNum);
    void display();
    bool searchItem(int itemNum);
+   void update();
    LinkedList();
 };

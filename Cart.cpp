@@ -4,9 +4,9 @@ Cart::Cart()
 {
     totalDue = 0;
 }
-void Cart::addToCart(Item* item)
+bool Cart::addToCart(Item* item)
 {
-    cart.insertItem(item);
+     return cart.insertItem(item);
 }
 void Cart::removeFromCart(int upc)
 {
@@ -15,4 +15,8 @@ void Cart::removeFromCart(int upc)
 void Cart::viewCart()
 {
     cart.display();
+}
+void Cart::checkOut()
+{
+    cart.update();
 }
