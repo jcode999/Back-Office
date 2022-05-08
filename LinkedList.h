@@ -5,9 +5,9 @@ class LinkedList
    Item* head;
    Item* tail;
    public:
-   void insertItem(Item* item);
-   bool deleteItem(int item);
+   bool insertItem(Item* item);
+   bool deleteItem(int itemNum);
    void display();
-   //Item* getItem(int key);
+   bool searchItem(int itemNum);
    LinkedList();
 };

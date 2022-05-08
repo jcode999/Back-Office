@@ -65,7 +65,7 @@ void Inventory::display()
     cout << "---------Inventory--------" << endl;
         for (int x = 0; x < size; x++)
         {
-            cout << "[" << x << "] ->[(" << (table + x)->getUPC()<<","<< (table + x)->getDescription()<<")]" << endl;
+            cout << x <<" "<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
         }
 }
 
