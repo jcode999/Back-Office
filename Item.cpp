@@ -1,8 +1,30 @@
 #include"Item.h"
-Item::Item(int upc)
+
+Item::Item(int upc, string des, int current, int begining, int sold, float cost, float retail)
 {
-   UPC = upc;
-   nextPtr = nullptr;
+    UPC = upc;
+    description = des;
+    current_quantity = current;
+    sold_quanity = sold;
+    begining_quantity = begining;
+    retailPrice = retail;
+    costPrice = cost;
+    nextPtr = nullptr;
+    emptySinceStart = true;
+    emptyAfterRemoval = false;
+}
+Item::Item()
+{
+    UPC = 0;
+    description = "";
+    current_quantity = 0;
+    sold_quanity = 0;
+    begining_quantity = 0;
+    retailPrice = 0;
+    costPrice = 0;
+    nextPtr = nullptr;
+    emptySinceStart = true;
+    emptyAfterRemoval = false;
 }
 Item* Item::getNextItem()
 {
@@ -16,9 +38,9 @@ int Item::getUPC()
 {
     return UPC;
 }
-Item::Item()
+Item::Item(int upc)
 {
-    UPC = 0;
+    UPC = upc;
     description = "";
     current_quantity = 0;
     sold_quanity = 0;
@@ -64,6 +86,14 @@ void Item::setBeginingQuantity(int begQuantity)
 int Item::getBeginingQuantity()
 {
     return begining_quantity;
+}
+void Item::setSoldQuantity(int sold)
+{
+    sold_quanity = sold;
+}
+int Item::getSoldQuantity()
+{
+    return sold_quanity;
 }
 void Item::setCostPrice(float cost)
 {

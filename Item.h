@@ -18,8 +18,9 @@ class Item
     bool emptyAfterRemoval;//used for hash table
     public:
     //gets and sets
-    Item();
     Item(int upc);
+    Item(int upc, string des, int current, int begining, int sold, float cost, float retail);
+    Item();
     Item* getNextItem();//used for liked_list
     int getUPC();
     void setUPC(int upc);

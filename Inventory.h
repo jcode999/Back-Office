@@ -12,8 +12,9 @@ class Inventory
     bool insert(Item* item);
     bool deleteItem(string key);
     int hash(string key);
-    void display();
+    void displayMenu();
     Item* getItem(int index);
+  
     
 
 };

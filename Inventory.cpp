@@ -1,4 +1,5 @@
 #include"Inventory.h"
+#include<fstream>
 #include<iostream>
 using namespace std;
 Inventory::Inventory(int _size)
@@ -6,6 +7,13 @@ Inventory::Inventory(int _size)
     table = new Item[_size];
     size = _size;
     P =  16908799;
+    ifstream file("test.csv");
+    string foo;
+    while(getline(file,foo))
+    {
+        cout<<foo<<endl;
+    }
+
 }
 int Inventory::hash(string key)
 {
@@ -31,6 +39,11 @@ bool Inventory::insert(Item* item)
             {
                 (table + bucket)->setDescription(item->getDescription());
                 (table + bucket)->setUPC(item->getUPC());
+                (table + bucket)->setCostPrice(item->getCostPrice());
+                (table + bucket)->setRetailPrice(item->getRetailPrice());
+                (table + bucket)->setCurrentQuantity(item->getCurrentQuantity());
+                (table + bucket)->setBeginingQuantity(item->getBeginingQuantity());
+                (table + bucket)->setSoldQuantity(item->getSoldQuantity());
                 (table + bucket)->setEmptySinceStart(false);
                 return true;
             }
@@ -60,9 +73,9 @@ bool Inventory::deleteItem(string key)
         }
         return false;
 }
-void Inventory::display()
+void Inventory::displayMenu()
 {
-    cout << "---------Inventory--------" << endl;
+    cout << "---------Menu--------" << endl;
         for (int x = 0; x < size; x++)
         {
             cout << x <<" "<< (table + x)->getDescription()<<"  "<<(table + x)->getRetailPrice() << endl;
@@ -73,4 +86,5 @@ Item* Inventory::getItem(int index)
 {
     return table + index;
 }
+
 
