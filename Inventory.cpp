@@ -1,66 +1,14 @@
 #include"Inventory.h"
 #include<fstream>
 #include<iostream>
+#include<vector>
+#include<string.h>
 using namespace std;
 Inventory::Inventory(int _size)
 {
     table = new Item[_size];
     size = _size;
     P =  16908799;
-    ifstream file("test.csv");
-    string foo;
-    int counter = 0;
-    
-    int upc;
-    string des;
-    int beg;
-    int curr;
-    int sold;
-    float cost;
-    float retail;
-    
-    
-    while(getline(file,foo,','))
-    {
-        switch(counter)
-        {
-            case 0:
-            {
-            upc = stoi(foo); break;
-            
-            }
-            case 1:
-            {
-                des = foo; break;
-            }
-            case 2:
-            {
-                beg = stoi(foo); break;
-            }
-            case 3:
-            {
-                curr = stoi(foo); break;
-            }
-            case 4:
-            {
-                sold = stoi(foo); break;
-            }
-            case 5:
-            {
-                cost = stof(foo); break;
-            }
-            case 6://we know line will change after this condition is met, therefore all the variables will be initialized for an item
-            {
-                 retail = stof(foo); 
-                 counter = -1;
-                 Item item(upc,des,curr,beg,sold,cost,retail);
-                 insert(&item);
-                break;
-            }
-        }
-        counter++;
-    }
-
 }
 int Inventory::hash(string key)
 {
