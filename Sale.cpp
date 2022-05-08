@@ -9,11 +9,12 @@ void makeASale(Inventory inventory)
   
    cout<<"Dear Valued Costumer, Welcome Back."<<endl;
    while(continueLoop){
+   cout<<endl;
    cout<<"Enter 1 to display products menu"<<endl;
    cout<<"Enter 2 to add products to cart"<<endl;
    cout<<"Enter 3 to delete item from cart"<<endl;
    cout<<"Enter 4 to view your cart"<<endl;
-   cout<<"Enter -1 to check out and exit"<<endl;
+   cout<<"Enter -1 to check out and Exit"<<endl;
    cin>>option;
    
    switch(option)
@@ -32,10 +33,12 @@ void makeASale(Inventory inventory)
                 cin>>itemNum;
                 if(itemNum==-1) break;
                 Item * item  = inventory.getItem(itemNum);
-           if(cart.addToCart(item))
-           {
-               cout<<item->getDescription()<<" added to your cart"<<endl;
-           }
+                if(item->getUPC()!=0){//all upc will be greater than 1
+                if(cart.addToCart(item))
+                {
+                  cout<<item->getDescription()<<" added to your cart"<<endl;
+                }
+                }
           
            }
            break;

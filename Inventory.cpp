@@ -90,9 +90,23 @@ void Inventory::displayInventory()
         }
 }
 
-Item* Inventory::getItem(int index)
+Item* Inventory::searchItem(string description)
 {
-    return table + index;
+    int bucket = hash(description);
+        int bucketsProbed = 0;
+        while (bucketsProbed < size && !(table + bucket)->getEmptySinceStart())
+        {
+            if ((table + bucket)->getDescription() == description)
+                return (table + bucket);
+
+            bucket = (bucket + 1) % size;
+            ++bucketsProbed;
+        }
+        return nullptr;
+}
+Item* Inventory::getItem(int itemNum)
+{
+    return table + itemNum;
 }
 
 

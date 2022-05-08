@@ -13,8 +13,9 @@ class Inventory
     bool deleteItem(string key);
     int hash(string key);
     void displayMenu();
-    Item* getItem(int index);
+    Item* searchItem(string description);
     void displayInventory();
+    Item* getItem(int itemNum);
   
     
 
