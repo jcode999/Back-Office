@@ -9,9 +9,57 @@ Inventory::Inventory(int _size)
     P =  16908799;
     ifstream file("test.csv");
     string foo;
-    while(getline(file,foo))
+    int counter = 0;
+    
+    int upc;
+    string des;
+    int beg;
+    int curr;
+    int sold;
+    float cost;
+    float retail;
+    
+    
+    while(getline(file,foo,','))
     {
-        cout<<foo<<endl;
+        switch(counter)
+        {
+            case 0:
+            {
+            upc = stoi(foo); break;
+            
+            }
+            case 1:
+            {
+                des = foo; break;
+            }
+            case 2:
+            {
+                beg = stoi(foo); break;
+            }
+            case 3:
+            {
+                curr = stoi(foo); break;
+            }
+            case 4:
+            {
+                sold = stoi(foo); break;
+            }
+            case 5:
+            {
+                cost = stof(foo); break;
+            }
+            case 6:
+            {
+                retail = stof(foo); 
+                counter = 0;
+                break;
+            }
+        }
+        counter++;
+        Item temp(upc,des,curr,beg,sold,cost,retail);
+        insert(&temp);
+        
     }
 
 }
